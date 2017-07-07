@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>data</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/01.css">
+</head>
+<body>
+	<ul id="data_ul"></ul>
+</body>
+<script>
+	var xhr = new XMLHttpRequest();
+	xhr.open("get","data/data.php?type=list");
+	// 设置监听函数
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			console.log(xhr.responseText);
+			// 得到的是json字符串，需要解析
+			var str = JSON.parse(xhr.responseText);
+			console.log(str.records);  //得到一个数组，里面包含了多个对象
+			//遍历数组，将数组的 City:"济南" 和Country:"中国" 属性在html文档中显示出来，即上方的li中
+			for(var i = 0; i < str.records.length; i++){
+				var li = document.createElement("li");
+				var liOne = document.createElement("li");
+				li.innerHTML = "<p>"+str.records[i].Name+"</p>";
+				liOne.innerHTML = "<p>"+str.records[i].City+"</p>";
+				var ul = document.getElementById("data_ul");
+				ul.appendChild(li);
+				ul.appendChild(liOne);
+			}
+		}
+	}
+	xhr.send(null);
+</script>
+</html>

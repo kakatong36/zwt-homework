@@ -1,0 +1,34 @@
+<!-- home不用 body啥的 -->
+<ion-view title="首页">
+	<!-- 设置头部 -->
+	<ion-header-bar align-title="center" class="bar-assertive">
+		<h1 class="title title-center">首页</h1>
+	</ion-header-bar>
+	<!-- section部分 -->
+	<ion-content>
+		<!-- 下拉刷新部分 -->
+		<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+
+		<!-- 头部的幻灯片 -->
+		<ion-slide-box auto-play="true">
+		<!-- 假如图片有很多张，都要一个一个写出 ion-slide吗，这里用到的是 ng-repeat，循环创建 -->
+			<ion-slide ng-repeat="source in imgs">
+				<div class = "box">
+				<!-- 这里要用到 表达式 -->
+					<img ng-src ="{{source}}">
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+
+		<!-- 使用列表 -->
+		<ion-list>
+			<ion-item ng-repeat='people in detailArr' ng-click="gotoDetail(people)">
+				<p>姓名：{{people.Name | smileFilter}}</p>
+				<p>城市：{{people.City}}</p>
+			</ion-item>
+		</ion-list>	
+
+		<!-- 向上加载部分 -->
+		<ion-infinite-scroll ng-if="isMore" on-infinite = "loadMore()" distance="1%"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>
