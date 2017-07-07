@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<link rel="stylesheet" href="css/index01.css">
+
+	<script src = "js/swiper.min.js"></script>
+	<script type="text/javascript" src = "js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<title></title>
+</head>
+<body> 
+	<div class="JD_box">
+		<header class="JD_header">
+			<!-- 在header内部套一层盒子，避免使用header导致的头部充满页面 -->
+			<div class="JD_help">
+				<a href="" class="JD_logo"><img src="images/JD.png" alt=""></a>
+				<form action="">
+					<input type="text" placeholder="请输入商品名">
+				</form>
+				<a href="" class="JD_load">登录</a>
+			</div>
+		</header>
+		<!-- 轮播图：自适应宽度，高度等比缩放，手指滑动，需要n+2个img标记，以保证幻灯的完美循环效果 -->
+		<div class="loopImg swiper-container">
+			<ul class="loopImg_ul swiper-wrapper ">
+				
+				<li class = "swiper-slide"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/2.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/3.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/4.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/5.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/6.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/7.jpg" alt=""></a></li>
+				<li class = "swiper-slide"><a href="#"><img src="images/8.jpg" alt=""></a></li>
+				
+			</ul>
+			<!-- 轮播远点 -->
+			<!-- <ul class="loopCircle_ul">
+				<li class = "current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul> -->
+			<div class="swiper-pagination"></div>
+		</div>
+		<script>
+		var swiper = new Swiper(".swiper-container",{
+			// paginationClickable:true,
+			grabCursor:true,
+			pagination:".swiper-pagination",
+			autoplay:2000,
+			loop:true,
+			autoplayDisableOnInteraction:false
+		});
+	</script>
+		<!-- 导航布局 -->
+		<nav class = "nav_area">
+			<div class = "area1">
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+			</div>
+			<div class = "area2">
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="images/icon.jpg">
+					<p>分类查询</p>
+				</div>
+			</div>
+		</nav>
+
+		<!-- 主页商品详情 -->
+		<div class = "section_box">
+		<!-- 秒杀商品部分 -->
+			<section>
+				<div class = "seckill_header">
+					<span class= "clock"></span>
+					<span class = "hand_seckill"> 掌上秒杀</span>
+					<div class= "interTime">
+						<span>0</span>
+						<span>0</span>
+						<span class = "bgNone">:</span>
+						<span>0</span>
+						<span>0</span>
+						<span class = "bgNone">:</span>
+						<span>0</span>
+						<span>0</span>
+					</div>
+					<span class = "more">更多>></span>
+				</div>
+				<div class = "seckill_body">
+					<ul>
+						<li>
+							<a href="">
+								<img src="images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p class = "moneyTh">&yen;100</p>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p class = "moneyTh">&yen;100</p>
+						</li>
+						<li>
+							<a href="" class = "right_none">
+								<img src="images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p class = "moneyTh">&yen;100</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div class = "threeTu_header">京东超市</div>
+				<div class = "threeTu_body">
+					<a href="" class = "tu_3 tu_left"><img src="images/pf1.jpg" alt=""></a>
+					<a href="" class = "tu_3 tu_right bor_bottom bor_left"><img src="images/pf2.jpg" alt=""></a>
+					<a href="" class = "tu_3 tu_right bor_left"><img src="images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+			<section>
+				<div class = "threeTu_header">京东超市</div>
+				<div class = "threeTu_body">
+					<a href="" class = "tu_3 tu_right"><img src="images/pf1.jpg" alt=""></a>
+					<a href="" class = "tu_3  bor_bottom bor_right"><img src="images/pf2.jpg" alt=""></a>
+					<a href="" class = "tu_3 tu_left bor_right"><img src="images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+			<section>
+				<div class = "threeTu_header">京东超市</div>
+				<div class = "threeTu_body">
+					<a href="" class = "tu_3 tu_left"><img src="images/pf1.jpg" alt=""></a>
+					<a href="" class = "tu_3 tu_right bor_bottom bor_left"><img src="images/pf2.jpg" alt=""></a>
+					<a href="" class = "tu_3 tu_right bor_left"><img src="images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script src = "js/index01.js"></script>
+	
+</body>
+</html>
